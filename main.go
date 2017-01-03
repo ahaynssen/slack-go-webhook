@@ -45,6 +45,11 @@ func (attachment *Attachment) AddField(field Field) *Attachment {
 	return attachment
 }
 
+func (attachement *Attachment) AddMrkdwn(mrkdwn *string) *Attachment {
+	attachement.Mrkdwn = append(attachement.Mrkdwn, mrkdwn)
+	return attachement
+}
+
 func redirectPolicyFunc(req gorequest.Request, via []gorequest.Request) error {
 	return fmt.Errorf("Incorrect token (redirection)")
 }
